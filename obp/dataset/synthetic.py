@@ -323,7 +323,7 @@ class SyntheticBanditDataset(BaseBanditDataset):
 
         """
         check_scalar(n_rounds, "n_rounds", int, min_val=1)
-        contexts = self.random_.normal(size=(n_rounds, self.dim_context))
+        contexts = self.random_.normal(size=(n_rounds, self.dim_context)) # ここ強制でランダムなコンテキスト入るんだ…まあいいけど
 
         # calc expected reward given context and action
         expected_reward_ = self.calc_expected_reward(contexts)
